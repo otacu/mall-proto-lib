@@ -1,0 +1,27 @@
+// 用maven插件生成java代码
+syntax = "proto3";
+
+package com.egoist.mall.grpc.generated.item.basic;
+
+service ItemBasicService {
+  rpc querySpuById(QuerySpuByIdRequest) returns (QuerySpuByIdResponse) {}
+}
+
+message QuerySpuByIdRequest {
+  int64 id = 1;
+}
+
+message QuerySpuByIdResponse {
+  int32 status = 1;
+  string msg = 2;
+  QuerySpuByIdData data = 3;
+}
+
+message QuerySpuByIdData {
+  int64 id = 1;
+  string cn_name = 2;
+  int64 brand_id = 3;
+  int64 origin_country_id = 4;
+  int64 production_country_id = 5;
+  int64 category_id = 6;
+}
